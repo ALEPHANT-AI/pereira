@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Projeto Pereira Gigante - Instalação da Mente Estratégica. Uma abordagem exclusiva da Alephant para transformar potência em direção estratégica.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projeto Pereira Gigante – Instalação da Mente Estratégica</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌀</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black: #0A0A0F;
+      --deep-purple: #2D1B69;
+      --medium-purple: #5D4AA8;
+      --light-purple: #8A6FFF;
+      --neon-pink: #FF2AFF;
+      --white: #F8F8FF;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    ::selection {
+      background-color: var(--neon-pink);
+      color: var(--white);
+    }
+
+    body {
+      background-color: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .glowing-border {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--neon-pink), var(--light-purple), var(--medium-purple), var(--neon-pink));
+      background-size: 400% 400%;
+      animation: gradient 10s ease infinite;
+      z-index: 1000;
+    }
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    header {
+      padding: 2rem 0;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -1px;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo::before {
+      content: "🌀";
+      margin-right: 0.5rem;
+      font-size: 2.5rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-link {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--neon-pink);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 8rem 0 6rem;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -20%;
+      right: -30%;
+      width: 100%;
+      height: 800px;
+      background: radial-gradient(circle, rgba(93, 74, 168, 0.3) 0%, rgba(10, 10, 15, 0) 70%);
+      z-index: -1;
+    }
+
+    .hero-subtitle {
+      color: var(--neon-pink);
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-size: 4rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 2rem;
+      background: linear-gradient(135deg, var(--white) 0%, var(--light-purple) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-description {
+      font-size: 1.3rem;
+      max-width: 700px;
+      margin-bottom: 3rem;
+      color: rgba(248, 248, 255, 0.8);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      color: var(--white);
+      background-color: transparent;
+      border: 2px solid var(--neon-pink);
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .btn::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background-color: var(--neon-pink);
+      transition: all 0.3s ease;
+      z-index: -1;
+    }
+
+    .btn:hover::before {
+      width: 100%;
+    }
+
+    .date-author {
+      margin-bottom: 4rem;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+
+    .section-subtitle {
+      color: var(--neon-pink);
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 4px;
+      background-color: var(--neon-pink);
+    }
+
+    .dna-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 3rem;
+    }
+
+    .dna-item {
+      background-color: rgba(90, 74, 168, 0.1);
+      padding: 3rem 2rem;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(138, 111, 255, 0.2);
+    }
+
+    .dna-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .dna-letter {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--neon-pink);
+      margin-bottom: 1.5rem;
+    }
+
+    .dna-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .dna-description {
+      color: rgba(248, 248, 255, 0.8);
+      margin-bottom: 1.5rem;
+    }
+
+    .dna-points {
+      list-style-type: none;
+    }
+
+    .dna-point {
+      margin-bottom: 0.8rem;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    .dna-point::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--neon-pink);
+    }
+
+    .results {
+      padding: 8rem 0;
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .result-item {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .result-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .result-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .result-description {
+      color: rgba(248, 248, 255, 0.8);
+    }
+
+    .cta {
+      padding: 8rem 0;
+      text-align: center;
+      background: linear-gradient(135deg, rgba(45, 27, 105, 0.5) 0%, rgba(10, 10, 15, 0.8) 100%);
+      position: relative;
+    }
+
+    .cta-title {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-description {
+      font-size: 1.3rem;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+      color: rgba(248, 248, 255, 0.8);
+    }
+
+    .project-details {
+      padding: 8rem 0;
+    }
+
+    .detail-container {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    .detail-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 2rem;
+      padding: 2rem;
+      background-color: rgba(90, 74, 168, 0.1);
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .detail-item:hover {
+      transform: translateX(10px);
+    }
+
+    .detail-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--neon-pink);
+      opacity: 0.7;
+    }
+
+    .detail-content h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .detail-content p {
+      color: rgba(248, 248, 255, 0.8);
+    }
+
+    .investment {
+      padding: 8rem 0;
+      background-color: rgba(45, 27, 105, 0.2);
+    }
+
+    .investment-card {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem;
+      background-color: rgba(10, 10, 15, 0.9);
+      border-radius: 10px;
+      border: 1px solid rgba(138, 111, 255, 0.3);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .investment-title {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .investment-details {
+      margin-bottom: 3rem;
+    }
+
+    .investment-detail {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(138, 111, 255, 0.2);
+    }
+
+    .investment-detail:last-child {
+      border-bottom: none;
+    }
+
+    .investment-detail-label {
+      font-weight: 600;
+    }
+
+    .investment-detail-value {
+      color: var(--light-purple);
+      font-weight: 600;
+    }
+
+    .investment-price {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .investment-amount {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--neon-pink);
+      margin-bottom: 0.5rem;
+    }
+
+    .investment-terms {
+      font-size: 1.2rem;
+      color: rgba(248, 248, 255, 0.8);
+    }
+
+    .footer {
+      padding: 4rem 0;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      color: var(--white);
+      letter-spacing: -1px;
+      display: inline-block;
+    }
+
+    .footer-logo::before {
+      content: "🌀";
+      margin-right: 0.5rem;
+    }
+
+    .footer-tagline {
+      font-size: 1.2rem;
+      color: rgba(248, 248, 255, 0.8);
+      margin-bottom: 2rem;
+    }
+
+    .contact-form {
+      max-width: 600px;
+      margin: 3rem auto;
+      background-color: rgba(45, 27, 105, 0.2);
+      padding: 2rem;
+      border-radius: 10px;
+      border: 1px solid rgba(138, 111, 255, 0.2);
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      background-color: rgba(10, 10, 15, 0.8);
+      border: 1px solid rgba(138, 111, 255, 0.3);
+      border-radius: 4px;
+      color: var(--white);
+      transition: all 0.3s ease;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--neon-pink);
+      box-shadow: 0 0 0 2px rgba(255, 42, 255, 0.2);
+    }
+
+    .form-label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .submit-button {
+      background-color: var(--neon-pink);
+      color: var(--white);
+      border: none;
+      padding: 1rem 2rem;
+      font-weight: 600;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+
+    .submit-button:hover {
+      background-color: #ff46ff;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(255, 42, 255, 0.3);
+    }
+
+    /* Back to top button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: var(--neon-pink);
+      color: var(--white);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+      text-decoration: none;
+      opacity: 0;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      z-index: 999;
+      transform: translateY(20px);
+      box-shadow: 0 4px 12px rgba(255, 42, 255, 0.3);
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-5px);
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: rgba(90, 74, 168, 0.2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+
+    .social-icon:hover {
+      background-color: var(--neon-pink);
+      transform: translateY(-5px);
+    }
+
+    /* Reveal animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Pulse animation for buttons */
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(255, 42, 255, 0.7);
+      }
+
+      70% {
+        box-shadow: 0 0 0 15px rgba(255, 42, 255, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(255, 42, 255, 0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Elementos decorativos -->
+  <div class="glowing-border"></div>
+  <div class="glow glow-1"></div>
+  <div class="glow glow-2"></div>
+  <div class="glow glow-3"></div>
+
+  <!-- Cabeçalho e navegação -->
+  <header>
+    <div class="container">
+      <nav class="nav">
+        <div class="logo">ALEPHANT</div>
+        <div class="nav-links">
+          <a href="#context" class="nav-link">Contexto</a>
+          <a href="#methodology" class="nav-link">Metodologia</a>
+          <a href="#results" class="nav-link">Resultados</a>
+          <a href="#investment" class="nav-link">Investimento</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Seção Hero -->
+  <section class="hero">
+    <div class="container">
+      <p class="hero-subtitle">Aceleradora Estratégica</p>
+      <h1 class="hero-title">PROJETO PEREIRA GIGANTE — INSTALAÇÃO DA MENTE ESTRATÉGICA</h1>
+      <p class="hero-description">
+        O Pereira é um gigante. Mas até mesmo os gigantes precisam de foco. Viemos criar a Mente Estratégica do Pereira — uma inteligência personalizada que ouve, organiza, prioriza e direciona.
+      </p>
+      <a href="#contact" class="btn btn-pulse">Quero Clareza Estratégica</a>
+    </div>
+  </section>
+
+  <!-- Data/Autor -->
+  <div class="date-author container">
+    <p style="text-align: center; color: var(--light-purple);">
+      por <strong>Alephant – Aceleradora Estratégica</strong><br>
+      Abril de 2025
+    </p>
+  </div>
+
+  <!-- Seção Contexto -->
+  <section class="context" id="context">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-subtitle">CONTEXTO</p>
+        <h2 class="section-title">A POTÊNCIA E O DESAFIO</h2>
+      </div>
+      <div style="max-width: 800px; margin: 0 auto; padding: 0 20px;">
+        <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+          Uma inteligência personalizada, construída a partir da própria voz dele, das decisões que já tomou, das ideias que tem todos os dias.
+        </p>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+          Uma IA que <strong>ouve, organiza, prioriza e direciona</strong> — para que ele pare de carregar o mundo nas costas e passe a caminhar com leveza e potência real.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Necessidades -->
+  <section class="needs" style="padding: 8rem 0;">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-subtitle">O QUE VOCÊS PEDIRAM</p>
+        <h2 class="section-title">DIRETO AO PONTO</h2>
+      </div>
+      <div style="max-width: 800px; margin: 0 auto; padding: 0 20px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+          <div style="background: rgba(138, 111, 255, 0.1); border-radius: 8px; padding: 1.5rem;">
+            <p style="font-size: 1.2rem; font-style: italic;">"Nosso maior problema hoje é clareza."</p>
+          </div>
+          <div style="background: rgba(138, 111, 255, 0.1); border-radius: 8px; padding: 1.5rem;">
+            <p style="font-size: 1.2rem; font-style: italic;">"Quero que a IA me diga: esse cara vale sua energia, esse não."</p>
+          </div>
+          <div style="background: rgba(138, 111, 255, 0.1); border-radius: 8px; padding: 1.5rem;">
+            <p style="font-size: 1.2rem; font-style: italic;">"O WhatsApp dele vale ouro."</p>
+          </div>
+          <div style="background: rgba(138, 111, 255, 0.1); border-radius: 8px; padding: 1.5rem;">
+            <p style="font-size: 1.2rem; font-style: italic;">"A IA tem que vir depois da clareza. Senão, acelera pro lado errado."</p>
+          </div>
+        </div>
+        <p style="font-size: 1.2rem; margin-top: 3rem;">
+          Anotamos tudo. E estruturamos um caminho que responde exatamente ao que vocês expressaram — sem floreios.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Metodologia -->
+  <section class="methodology" id="methodology">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-subtitle">A NOSSA PROPOSTA</p>
+        <h2 class="section-title">INSTALAR A MENTE DO PEREIRA</h2>
+        <p>
+          Um projeto de 6 meses, com impacto desde o primeiro.<br>
+          Através da <strong>metodologia D.N.A. Alephant</strong>, aplicada 100% ao que vocês precisam:
+        </p>
+      </div>
+      <div class="dna-container reveal">
+        <div class="dna-item">
+          <div class="dna-letter">D</div>
+          <h3 class="dna-title">DISCOVERY</h3>
+          <h4 style="color: var(--neon-pink); margin-bottom: 1rem; font-size: 1.2rem;">CLAREZA DO INVISÍVEL</h4>
+          <p class="dna-description">
+            Antes de pensar em crescimento, é preciso <strong>ver com clareza o que já existe</strong>, e o que está drenando energia.
+          </p>
+          <ul class="dna-points">
+            <li class="dna-point">Rastreamento real de áudios, WhatsApp, reuniões, decisões</li>
+            <li class="dna-point">Organização do conhecimento do Pereira (base de dados viva)</li>
+            <li class="dna-point">Diagnóstico estratégico completo da operação</li>
+            <li class="dna-point">Análise de canais, públicos, produtos e maturidade</li>
+            <li class="dna-point">Entrega visual com mapa de foco, ruído e potencial</li>
+          </ul>
+          <div style="margin-top: 1.5rem; background: rgba(138, 111, 255, 0.1); padding: 1rem; border-left: 3px solid var(--neon-pink); font-style: italic;">
+            <p><em>Resultado esperado: clareza brutal.<br>Um raio-X do negócio — como ele realmente funciona, não como a gente acha que ele é.</em></p>
+          </div>
+        </div>
+        <div class="dna-item">
+          <div class="dna-letter">N</div>
+          <h3 class="dna-title">NORTH</h3>
+          <h4 style="color: var(--neon-pink); margin-bottom: 1rem; font-size: 1.2rem;">DIREÇÃO ESTRATÉGICA</h4>
+          <p class="dna-description">Com clareza em mãos, traçamos o caminho com precisão.</p>
+          <ul class="dna-points">
+            <li class="dna-point">Definição da Identidade Pereira</li>
+            <li class="dna-point">Reposicionamento de linguagem, público e oferta</li>
+            <li class="dna-point">Estruturação do modelo de negócio estratégico e leve</li>
+            <li class="dna-point">Organização de equipe e papéis com foco no impacto</li>
+            <li class="dna-point">Arquitetura da narrativa para eventos e funil de alto valor</li>
+            <li class="dna-point">Planejamento da fundação para comunidade, mentoria e recorrência</li>
+          </ul>
+          <div style="margin-top: 1.5rem; background: rgba(138, 111, 255, 0.1); padding: 1rem; border-left: 3px solid var(--neon-pink); font-style: italic;">
+            <p><em>Resultado esperado: direção com segurança.<br>Clareza de onde colocar energia — e, principalmente, onde não colocar mais.</em></p>
+          </div>
+        </div>
+        <div class="dna-item">
+          <div class="dna-letter">A</div>
+          <h3 class="dna-title">ACCELERATE</h3>
+          <h4 style="color: var(--neon-pink); margin-bottom: 1rem; font-size: 1.2rem;">AÇÃO COM INTELIGÊNCIA</h4>
+          <p class="dna-description">Com clareza e direção, ativamos a inteligência estratégica com IA personalizada.</p>
+          <ul class="dna-points">
+            <li class="dna-point">IA conselheira evolutiva, treinada com tudo que o Pereira já falou, decidiu e deseja</li>
+            <li class="dna-point">Sistema de priorização contínua: o que vale energia hoje</li>
+            <li class="dna-point">IA como conselheira de vendas, decisões e oportunidades</li>
+            <li class="dna-point">Relatórios práticos e orientação semanal com insights baseados em dados reais</li>
+            <li class="dna-point">Preparação da estrutura para escalar sem aumentar carga</li>
+          </ul>
+          <div style="margin-top: 1.5rem; background: rgba(138, 111, 255, 0.1); padding: 1rem; border-left: 3px solid var(--neon-pink); font-style: italic;">
+            <p><em>Resultado esperado: execução com leveza.<br>Menos decisões no cansaço, mais direção com inteligência.</em></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Project Details (Diagnóstico Personalizado) com introdução -->
+  <section class="project-details">
+    <div class="container">
+      <div class="intro" style="max-width: 800px; margin: 0 auto 2rem; padding: 0 20px;">
+        <p style="font-size: 1.2rem; line-height: 1.8;">
+          Hoje, existe uma potência viva — humana, real, com autoridade construída — que <strong>atrai, inspira, movimenta</strong>. Mas essa potência está fragmentada. A energia que poderia mover montanhas está sendo gasta em múltiplas frentes, sem a clareza necessária para transformá-la em impacto real.
+        </p>
+        <div style="background: rgba(138, 111, 255, 0.1); border-left: 4px solid var(--neon-pink); padding: 1.5rem; margin: 2rem 0; font-size: 1.2rem;">
+          "Hoje ele vende muito, mas faz muita coisa por pouco resultado. Tá gastando 90% de energia por 10% de retorno."
+        </div>
+        <p style="font-size: 1.2rem; margin-bottom: 1rem;">É aqui que entramos.</p>
+      </div>
+      <div class="section-header">
+        <p class="section-subtitle">Diagnóstico Personalizado</p>
+        <h2 class="section-title">PRINCIPAIS DORES & SOLUÇÕES</h2>
+      </div>
+      <div class="detail-container reveal">
+        <div class="detail-item">
+          <div class="detail-number">01</div>
+          <div class="detail-content">
+            <h3>Falta de clareza estratégica</h3>
+            <p>🔁 Diagnóstico profundo do DNA com rastreio real (WhatsApp, reuniões e decisões)<br>
+              🔁 Mapa visual de foco x desperdício com orientação prática</p>
+          </div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-number">02</div>
+          <div class="detail-content">
+            <h3>Energia dispersa em múltiplas frentes</h3>
+            <p>🔁 IA conselheira que centraliza falas, ideias, oportunidades e organiza prioridades</p>
+          </div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-number">03</div>
+          <div class="detail-content">
+            <h3>Time dependente do Pereira</h3>
+            <p>🔁 Redesenho da estrutura estratégica com papéis definidos e foco na autonomia</p>
+          </div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-number">04</div>
+          <div class="detail-content">
+            <h3>Faturamento abaixo do potencial da imagem</h3>
+            <p>🔁 Alinhamento da autoridade com ofertas de alto valor e funil focado</p>
+          </div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-number">05</div>
+          <div class="detail-content">
+            <h3>Comercial desalinhado e vendas imprevisíveis</h3>
+            <p>🔁 Direcionamento estratégico com IA + clareza de pitch e ciclo de decisão</p>
+          </div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-number">06</div>
+          <div class="detail-content">
+            <h3>Produtos digitais com pouca aderência</h3>
+            <p>🔁 Reposicionamento narrativo e estrutural das ofertas para maior conexão</p>
+          </div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-number">07</div>
+          <div class="detail-content">
+            <h3>Ausência de recorrência, comunidade e visão de longo prazo</h3>
+            <p>🔁 Criação da fundação estratégica para plataforma, experiência e comunidade futura</p>
+          </div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-number">08</div>
+          <div class="detail-content">
+            <h3>Decisões tomadas na urgência ou por intuição</h3>
+            <p>🔁 IA com base em dados reais + sistema de priorização contínua</p>
+          </div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-number">09</div>
+          <div class="detail-content">
+            <h3>Imagem forte, estrutura frágil</h3>
+            <p>🔁 Construção de estrutura coerente com a autoridade já existente</p>
+          </div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-number">10</div>
+          <div class="detail-content">
+            <h3>Medo de crescer e perder liberdade ou essência</h3>
+            <p>🔁 Modelo centrado em clareza e foco: crescer fazendo menos, com mais consciência</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Resultados Esperados -->
+  <section class="results" id="results">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-subtitle">O que esperar</p>
+        <h2 class="section-title">RESULTADOS ESPERADOS</h2>
+        <p>Transformação real desde o primeiro mês.</p>
+      </div>
+      <div class="results-grid reveal">
+        <div class="result-item">
+          <div class="result-icon">✨</div>
+          <h3 class="result-title">Clareza Absoluta</h3>
+          <p class="result-description">Clareza absoluta desde o primeiro mês.</p>
+        </div>
+        <div class="result-item">
+          <div class="result-icon">⚡</div>
+          <h3 class="result-title">Liberdade de Tempo</h3>
+          <p class="result-description">Liberdade de tempo e energia para o Pereira.</p>
+        </div>
+        <div class="result-item">
+          <div class="result-icon">🧠</div>
+          <h3 class="result-title">IA Estratégica Ativa</h3>
+          <p class="result-description">IA estratégica ativa, orientando decisões e prioridades.</p>
+        </div>
+        <div class="result-item">
+          <div class="result-icon">🔍</div>
+          <h3 class="result-title">Diagnóstico Completo</h3>
+          <p class="result-description">Diagnóstico de tudo que já está rodando (e ninguém está vendo).</p>
+        </div>
+        <div class="result-item">
+          <div class="result-icon">🎯</div>
+          <h3 class="result-title">Foco Otimizado</h3>
+          <p class="result-description">Foco no que gera mais resultado com menos esforço.</p>
+        </div>
+        <div class="result-item">
+          <div class="result-icon">📈</div>
+          <h3 class="result-title">Modelo Sustentável</h3>
+          <p class="result-description">Estruturação de um modelo de negócio que sustenta o tamanho da imagem.</p>
+        </div>
+        <div class="result-item">
+          <div class="result-icon">🔄</div>
+          <h3 class="result-title">Transição Natural</h3>
+          <p class="result-description">Transição natural de executor para estrategista.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Call To Action -->
+  <section class="cta">
+    <div class="container">
+      <h2 class="cta-title">Pare de Carregar o Mundo nas Costas</h2>
+      <p class="cta-description">
+        Esse projeto não é sobre tecnologia. É sobre transformar potência em direção, intuição em estratégia, fala em inteligência. É a construção da Mente Pereira — para que ele (e seu time) pense com mais clareza, sinta com mais leveza e decida com mais poder.
+      </p>
+      <a href="#contact" class="btn">Quero Saber Mais</a>
+    </div>
+  </section>
+
+  <!-- Seção Investimento -->
+  <section class="investment" id="investment">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-subtitle">Seu Investimento</p>
+        <h2 class="section-title">INVESTIMENTO</h2>
+      </div>
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1.5rem; color: var(--white);">
+          PROJETO PEREIRA GIGANTE — VIA METODOLOGIA DNA
+        </h2>
+      </div>
+      <div class="investment-card reveal">
+        <h3 class="investment-title">INVESTIMENTO</h3>
+        <div class="investment-details">
+          <div class="investment-detail">
+            <span class="investment-detail-label">Duração total</span>
+            <span class="investment-detail-value">6 meses</span>
+          </div>
+          <div class="investment-detail">
+            <span class="investment-detail-label">Formato</span>
+            <span class="investment-detail-value">Diagnóstico + IA conselheira + Reposicionamento + Estratégia viva</span>
+          </div>
+        </div>
+        <div class="investment-price">
+          <div class="investment-amount">R$ 150.000</div>
+          <div class="investment-terms">à vista ou em até 6x de R$ 27.000</div>
+        </div>
+        <div class="cta-center" style="text-align: center; margin-top: 2rem;">
+          <a href="#contact" class="btn btn-pulse">Iniciar Transformação</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">ALEPHANT</div>
+        <p class="footer-tagline">"Nem consultoria tradicional, nem empresa de tecnologia. Uma aceleradora estratégica."</p>
+        <div style="margin-top: 2rem;">
+          <div style="background: rgba(255, 42, 255, 0.1); border-radius: 8px; padding: 2rem; margin-bottom: 2rem;">
+            <p style="font-size: 1.2rem; margin-bottom: 1rem; font-weight: 700; color: var(--white);">
+              <strong>Esse projeto não é sobre tecnologia.</strong>
+            </p>
+            <p style="font-size: 1.2rem; margin-bottom: 1rem; color: var(--white);">
+              É sobre transformar potência em direção, intuição em estratégia, fala em inteligência.
+            </p>
+            <p style="font-size: 1.2rem; color: var(--white);">
+              É a construção da Mente Pereira — para que ele (e seu time) pense com mais clareza, sinta com mais leveza e decida com mais poder.
+            </p>
+          </div>
+          <p style="margin-bottom: 1rem; color: var(--light-purple); font-weight: 600; font-size: 1.2rem;">POR QUE A ALEPHANT?</p>
+          <div style="background: rgba(138, 111, 255, 0.1); border-left: 4px solid var(--neon-pink); padding: 1.5rem; margin-bottom: 2rem; font-size: 1.2rem;">
+            "Nem consultoria tradicional, nem empresa de tecnologia. Uma aceleradora estratégica."
+          </div>
+          <p style="margin-bottom: 1rem;"><strong>Consultorias Tradicionais</strong> entregam diagnósticos e PowerPoints, mas deixam a implementação para o cliente.</p>
+          <p style="margin-bottom: 1rem;"><strong>Empresas de Tecnologia</strong> oferecem ferramentas de IA genéricas, sem compreensão profunda do seu negócio e estratégia.</p>
+          <p style="margin-bottom: 2rem;"><strong>A Alephant</strong> combina o melhor dos dois mundos:<br>
+            • <strong>Diagnóstico Estratégico</strong> + <strong>Implementação Prática</strong><br>
+            • <strong>Expertise em Negócios</strong> + <strong>Tecnologia de IA Proprietária</strong><br>
+            • <strong>Visão Ampla</strong> + <strong>Execução nos Detalhes</strong>
+          </p>
+          <p>Nossos clientes experimentam resultados 3x mais rápidos porque não separamos estratégia de execução.</p>
+        </div>
+        
+        </div>
+        <div class="social-icons">
+          <a href="#" class="social-icon" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="Twitter">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+            </svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="YouTube">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botão "Voltar ao topo" -->
+  <a href="#" class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </a>
+
+  <!-- Scripts -->
+  <script>
+    // Botão de voltar ao topo
+    const backToTopButton = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.add('visible');
+      } else {
+        backToTopButton.classList.remove('visible');
+      }
+    });
+    backToTopButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+    // Animações de scroll reveal
+    function reveal() {
+      const reveals = document.querySelectorAll('.reveal');
+      for (let i = 0; i < reveals.length; i++) {
+        const windowHeight = window.innerHeight;
+        const elementTop = reveals[i].getBoundingClientRect().top;
+        const elementVisible = 150;
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add('active');
+        }
+      }
+    }
+    window.addEventListener('scroll', reveal);
+    reveal(); // Trigger on load
+    // Simulação de envio de formulário
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const submitButton = contactForm.querySelector('.submit-button');
+        const originalText = submitButton.textContent;
+        submitButton.textContent = 'Enviando...';
+        submitButton.disabled = true;
+        setTimeout(() => {
+          submitButton.textContent = 'Mensagem Enviada!';
+          contactForm.reset();
+          setTimeout(() => {
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
+          }, 3000);
+        }, 1500);
+      });
+    }
+  </script>
+</body>
+
+</html>
